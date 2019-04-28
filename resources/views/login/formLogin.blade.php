@@ -14,7 +14,8 @@
 <body>
 <div class="container-fluid">
     <br>
-    <form>
+    <form action="{{url(action('LoginController@postLogin'))}}" method="post">
+        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
         <div class="form-group">
             <label for="exampleInputEmail1">Email dan username</label>
             <input type="text" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email or username">

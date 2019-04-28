@@ -13,6 +13,7 @@ class RegisterController extends Controller
         return view('register.fomRegister');
     }
 
+    //fun utk register
     public function postRegister(){
         $user = new User();
         $user->username = Input::get('username');
