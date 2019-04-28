@@ -16,8 +16,9 @@ class HomeController extends Controller
 
     //jadi hanya org yang sudah login yang bisa mengakses halaman ini
     public function home(){
-        $user = Auth::user()->username;
-//        dd(Auth::user()->username);
+//        $user = Auth::user()->username;
+        $user = Auth::user();
+//        dd(Auth::user());
         return view('welcome', ['data' => $user]);
     }
 }
