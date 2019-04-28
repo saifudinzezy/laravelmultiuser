@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -15,6 +16,8 @@ class HomeController extends Controller
 
     //jadi hanya org yang sudah login yang bisa mengakses halaman ini
     public function home(){
-        return view('welcome');
+        $user = Auth::user()->username;
+//        dd(Auth::user()->username);
+        return view('welcome', ['data' => $user]);
     }
 }

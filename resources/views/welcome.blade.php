@@ -78,9 +78,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Halaman khusus yang sudah login
-                </div>
+                <h2>Halaman khusus yang sudah login {{$data}}</h2>
                 <div class="title m-b-md">
                     Laravel
                 </div>
