@@ -26,4 +26,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    //membuat fungsi utk relasi antar tabel
+    //ke tabel user
+    public function role(){
+        return $this->belongsTo(Role::class);
+    }
 }
