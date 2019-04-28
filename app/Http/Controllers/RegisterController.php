@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Input;
 
 class RegisterController extends Controller
 {
+    //membuat middleware
+    public function __construct()
+    {
+        //hanya untk org yang belum punya akun / guest
+        $this->middleware('guest');
+    }
+
     public function getRegister(){
         return view('register.fomRegister');
     }

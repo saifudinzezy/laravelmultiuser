@@ -33,7 +33,7 @@ class CreateUsersTable extends Migration
         //memberitahukan bahwa ada foreignkey dan hapus data jika terjadi penghapusan
         //di tabel user
         Schema::table('users', function (Blueprint $kolom){
-           $kolom->foreign('roles_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+           $kolom->foreign('roles_id')->references('id')->on('roles')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

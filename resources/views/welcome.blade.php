@@ -79,6 +79,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
+                    Halaman khusus yang sudah login
+                </div>
+                <div class="title m-b-md">
                     Laravel
                 </div>
 

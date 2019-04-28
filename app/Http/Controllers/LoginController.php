@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    //membuat middleware
+    public function __construct()
+    {
+        //hanya untk org yang belum punya akun / guest
+        $this->middleware('guest');
+    }
+
     public function getLogin(){
         return view('login.formLogin');
     }
