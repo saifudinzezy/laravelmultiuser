@@ -15,10 +15,11 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('roles_id');
-            $table->text('name');
+            $table->unsignedInteger('roles_id')->nullable();
+            $table->string('username')->unique();
+            $table->string('name');
             $table->string('email')->unique();
-            $table->text('password');
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -26,12 +27,12 @@ class CreateUsersTable extends Migration
         //membuat tabel rules utk verif user/admin
         Schema::create('roles', function (Blueprint $kolom){
             $kolom->increments('id');
-            $kolom->text('namaRule');
+            $kolom->string('namaRule');
         });
 
         //memberitahukan bahwa ada foreignkey dan hapus data jika terjadi penghapusan
         //di tabel user
-        Schema::create('users', function (Blueprint $kolom){
+        Schema::table('users', function (Blueprint $kolom){
            $kolom->foreign('roles_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }

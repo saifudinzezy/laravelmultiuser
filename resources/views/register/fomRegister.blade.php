@@ -14,10 +14,16 @@
 <body>
 <div class="container-fluid">
     <br>
-    <form>
+    <form method="post" action="{{url(action('RegisterController@postRegister'))}}">
+        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
         <div class="form-group">
             <label for="nama">Masukan Nama</label>
-            <input type="text" class="form-control" name="nama" aria-describedby="emailHelp" placeholder="Enter nama">
+            <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter nama">
+        </div>
+        <div class="form-group">
+            <label for="nama">Masukan Username</label>
+            <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter username">
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
