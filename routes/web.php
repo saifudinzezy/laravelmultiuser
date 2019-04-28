@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('register', 'RegisterController@getRegister');
+Route::get('login', 'LoginController@getLogin');
