@@ -13,3 +13,11 @@ Route::get('logout', function (){
     Auth::logout();
     return 'sukses logout';
 });
+
+//membuat fun rule
+Route::get('pageAksesKhusus', function (){
+    return view('pageAksesKhusus');
+});
+
+Route::get('hapus', 'AdminController@hapus');
+Route::get('update', 'AdminController@update');

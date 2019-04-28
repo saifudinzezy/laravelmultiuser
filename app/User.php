@@ -30,6 +30,21 @@ class User extends Authenticatable
     //membuat fungsi utk relasi antar tabel
     //ke tabel user
     public function role(){
-        return $this->belongsTo(Role::class);
+        //tambah keterangan roles_id sbg foregn key
+        return $this->belongsTo(Role::class, 'roles_id');
+    }
+
+    //membuat fun role utk middleware hakakses
+    public function punyaRule($namaRule){
+        //test
+//        dd($this->role);
+        //cek jika nama rule di db == nama rule di inputan
+        if ($this->role->namaRule == $namaRule){
+            //kirim bolean ke yang manggil fungsi ini
+            return true;
+        }else{
+            //kirim bolean ke yang manggil fungsi ini
+            return false;
+        }
     }
 }
